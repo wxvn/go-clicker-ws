@@ -1,0 +1,26 @@
+services:
+  mongodb:
+    image: mongo:8.0
+    container_name: go_clicker_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: clicker
+    volumes:
+      - mongodb_data:/data/db
+
+  redis:
+    image: redis:8.0
+    container_name: go_clicker_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  mongodb_data:
+  redis_data:
