@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../features/auth/api'
 import { useUser } from '../features/user/UserContext'
-import avatar from '../assets/img/profile/cat-avatar.png'
+import avatar from '../assets/img/profile/ava.png'
 
 function UserMenu() {
   const { user, setUser } = useUser()
@@ -22,7 +22,7 @@ function UserMenu() {
     <div className="relative">
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="rounded-full ring-2 ring-white/20 transition hover:ring-white/40 active:scale-95"
+        className="rounded-full ring-2 ring-white/20 transition hover:ring-white/40 active:scale-95 bg-white"
       >
         <img
           src={avatar}
